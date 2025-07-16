@@ -1,2 +1,0 @@
-# grafana-dashboards
-Git Sync

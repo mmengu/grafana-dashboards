@@ -1,0 +1,2625 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": 214,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "panels": [],
+      "title": "Nginx VM Stats",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "nginx-api-overview?orgId=1&refresh=30s&from=now-6h&to=now",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/7jrrG8Hnz/nginx-api-overview?orgId=1&refresh=30s&from=now-6h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "semi-dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 1
+      },
+      "id": 592,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=\"NginxPlus_NonpciAPI\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "API",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd001"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "001"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd002"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "002"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd003"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "003"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd004"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "004"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd005"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "005"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd006"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "006"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd007"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "007"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd008"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "008"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd009"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "009"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd010"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "010"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd011"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "011"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd012"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "012"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd013"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "013"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd014"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "014"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd015"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "015"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd016"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "016"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd017"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "017"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd018"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "018"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd019"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "019"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd020"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "020"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd021"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "021"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd022"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "022"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd023"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "023"
+              },
+              {
+                "id": "displayName",
+                "value": "023"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd024"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "024"
+              },
+              {
+                "id": "displayName",
+                "value": "024"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd025"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "025"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd026"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "026"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd027"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "027"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd028"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "028"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd029"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "029"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd030"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "030"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "030"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "029"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "028"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "027"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "026"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 2,
+        "y": 1
+      },
+      "id": 629,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "builder",
+          "expr": "100 - avg by (instance)(rate(node_cpu_seconds_total{job=\"NodeExporter_NonpciAPI\", mode=\"idle\"}[1m]) * 100)",
+          "legendFormat": "{{ instance }}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "API CPU Usage (1m avg)",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^(.*?)\\..*",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd014"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "014"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd015"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "015"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd016"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "016"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd017"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "017"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd018"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "018"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd019"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "019"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd020"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "020"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd021"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "021"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd022"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "022"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd023"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "023"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 13,
+        "y": 1
+      },
+      "id": 633,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\", job=\"NodeExporter_WWW\"}[5m])) * 100)",
+          "legendFormat": "{{ instance }}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "WWW CPU Usage (5m avg)",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^(.*?)\\..*",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "azure-nginx-www-overview?orgId=1&from=now-6h&to=now",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/zk0_g8Hnz/azure-nginx-www-overview?orgId=1&from=now-6h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 3
+      },
+      "id": 590,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=\"NginxPlus_WWW\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "WWW",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/2Ii6Cc17/inventory-cms-web-cms-mobile-microsites-customer-nginx?orgId=1&from=now-1h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 5
+      },
+      "id": 597,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=~\"NginxPlus_MobileCMS\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Mobile",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/2Ii6Cc17/inventory-cms-web-cms-mobile-microsites-customer-nginx?orgId=1&from=now-1h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 7
+      },
+      "id": 587,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=\"NginxPlus_CgridAPI\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Customer",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/2Ii6Cc17/inventory-cms-web-cms-mobile-microsites-customer-nginx?orgId=1&from=now-1h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 9
+      },
+      "id": 591,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=\"NginxPlus_InventoryAPI\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Inventory",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "5xx"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 2,
+        "y": 9
+      },
+      "id": 637,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "expr": "round(sum(increase(nginxplus_server_zone_responses{job=\"NginxPlus_NonpciAPI\"}[5m]) != 0) by (code))",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "API Server Zone Status Code Responses (5m avg)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd001"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "001"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd002"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "002"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd003"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "003"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd004"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "004"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd005"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "005"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd006"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "006"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd007"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "007"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd008"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "008"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd009"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "009"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd010"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "010"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd011"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "011"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd012"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "012"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd013"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "013"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd014"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "014"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd015"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "015"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd016"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "016"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd017"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "017"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd018"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "018"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd019"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "019"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd020"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "020"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd021"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "021"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd022"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "022"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd023"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "023"
+              },
+              {
+                "id": "displayName",
+                "value": "023"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd024"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "024"
+              },
+              {
+                "id": "displayName",
+                "value": "024"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd025"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "025"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd026"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "026"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd027"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "027"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd028"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "028"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd029"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "029"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazapngxnpd030"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "030"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "030"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "029"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "028"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "027"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "026"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "010"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "super-light-purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 7,
+        "y": 9
+      },
+      "id": 631,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "expr": "100*(node_memory_MemTotal_bytes{job=\"NodeExporter_NonpciAPI\"} - node_memory_MemFree_bytes{job=\"NodeExporter_NonpciAPI\"} - node_memory_Buffers_bytes{job=\"NodeExporter_NonpciAPI\"} - node_memory_Cached_bytes{job=\"NodeExporter_NonpciAPI\"}) / node_memory_MemTotal_bytes{job=\"NodeExporter_NonpciAPI\"}",
+          "hide": false,
+          "legendFormat": "{{ instance }}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "API Memory Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^(.*?)\\..*",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "4xx"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 13,
+        "y": 9
+      },
+      "id": 636,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "expr": "round(sum(increase(nginxplus_server_zone_responses{job=\"NginxPlus_WWW\"}[5m]) != 0) by (code))",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "WWW Server Zone Status Code Responses (5m avg)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "orange",
+                "value": 75
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd014"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "014"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd015"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "015"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd016"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "016"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd017"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "017"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd018"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "018"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd019"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "019"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd020"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "020"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd021"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "021"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd022"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "022"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "vsazwwngxpd023"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "023"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 9
+      },
+      "id": 632,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "1PmuT9nnz"
+          },
+          "editorMode": "code",
+          "expr": "100*(node_memory_MemTotal_bytes{job=\"NodeExporter_WWW\"} - node_memory_MemFree_bytes{job=\"NodeExporter_WWW\"} - node_memory_Buffers_bytes{job=\"NodeExporter_WWW\"} - node_memory_Cached_bytes{job=\"NodeExporter_WWW\"}) / node_memory_MemTotal_bytes{job=\"NodeExporter_WWW\"}",
+          "hide": false,
+          "legendFormat": "{{ instance }}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "WWW Memory Usage",
+      "transformations": [
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "^(.*?)\\..*",
+            "renamePattern": "$1"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/2Ii6Cc17/inventory-cms-web-cms-mobile-microsites-customer-nginx?orgId=1&from=now-1h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 11
+      },
+      "id": 593,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=~\"NginxPlus_Microsites\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "Microsites",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "J_XD1BvIz"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "",
+              "url": "https://grafana-nonpci.commprod.eastus2.vsazure.com:3000/d/2Ii6Cc17/inventory-cms-web-cms-mobile-microsites-customer-nginx?orgId=1&from=now-1h&to=now"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Up"
+                },
+                "null": {
+                  "color": "dark-purple",
+                  "index": 0,
+                  "text": "N/A"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 13
+      },
+      "id": 594,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.0-91295",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "2CasKB47z"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "round(avg(nginxplus_up{job=\"NginxPlus_CMSUploads\"}))",
+          "hide": false,
+          "instant": true,
+          "legendFormat": "{{service}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "CMS",
+      "type": "stat"
+    }
+  ],
+  "preload": false,
+  "refresh": "30s",
+  "schemaVersion": 41,
+  "tags": [
+    "SRE",
+    "Nginx",
+    "CF",
+    "Kafka",
+    "EFK",
+    "latest"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h"
+    ]
+  },
+  "timezone": "America/New_York",
+  "title": "SRE Overview",
+  "uid": "sre",
+  "version": 2
+}
